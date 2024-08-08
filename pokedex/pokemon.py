@@ -1,3 +1,4 @@
+import random
 import requests 
 
 def printInfo(pokemon_info):
@@ -13,6 +14,7 @@ def printInfo(pokemon_info):
         }
         for key, value in info.items():
             print(f"{key}: {value}")
+        print("\n")
 
 def getPokemonInfo(pokemon_name):
     api = f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}'
@@ -41,9 +43,25 @@ def getPokemonInfo(pokemon_name):
     else:
         print("Falha ao acessar a API. Código de status:", res.status_code)
 
+def getAllPokemons():
+    api = 'https://pokeapi.co/api/v2/pokemon?limit=1000'  
+    res = requests.get(api)
+    if res.status_code == 200:
+        data = res.json()
+        return [pokemon['name'] for pokemon in data['results']]
+    else:
+        print("Falha ao acessar a lista de Pokémons. Código de status:", res.status_code)
+        return []
+
 def main():
-    pokemon_info = getPokemonInfo("bulbasaur")
-    printInfo(pokemon_info)
+    allPokemons = getAllPokemons()
+    if allPokemons:
+        randomPokemons = random.sample(allPokemons, 5)  # Seleciona 5 Pokémons aleatórios
+        for pokemon in randomPokemons:
+            pokemon_info = getPokemonInfo(pokemon)
+            printInfo(pokemon_info)
+    else:
+        print("Não foi possível obter a lista de Pokémons.")
     
     
 if __name__ == "__main__":
