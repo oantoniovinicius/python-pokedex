@@ -27,8 +27,9 @@ cd pokedex-python"
 Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
 
 "pip install -r requirements.txt"
+"pip install django"
 
-Nota: No momento, o projeto utiliza apenas bibliotecas padrão do Python, como requests e tkinter. Se alguma dependência adicional for necessária, ela será listada no requirements.txt.
+Nota: No momento, o projeto está em migração para o Django e está sendo desenvolvido em ambiente virtual ativo.
 
 #### Execute a Aplicação:
 
@@ -40,8 +41,8 @@ Para executar a versão atual da aplicação, rode o seguinte comando:
 
 Este projeto está em constante evolução e algumas das próximas etapas incluem:
 
-### Migração para Django: 
-Planejo criar uma versão web deste projeto utilizando o framework Django, onde será possível acessar a Pokédex através de um navegador.
+### Migração para Django: (Em andamento)
+Planejo criar uma versão web deste projeto utilizando o framework Django, onde será possível acessar a Pokédex através de um navegador. 
 
 ### Persistência de Dados: 
 Implementar uma base de dados para armazenar e consultar informações dos Pokémons localmente.
