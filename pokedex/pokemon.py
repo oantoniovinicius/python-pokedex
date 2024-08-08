@@ -1,57 +1,50 @@
 import requests 
 
-def pegarHabilidades(poke):
-    habilidades = []
-    for i in poke['abilities']:
-        habilidades.append(i['ability']['name'])
-    return habilidades
+def printInfo(pokemon_info):
+    if pokemon_info:
+        info = {
+            "Pokémon": pokemon_info['name'],
+            "Habilidades": ", ".join(pokemon_info['abilities']),
+            "Formas": ", ".join(pokemon_info['forms']),
+            "Tipo": ", ".join(pokemon_info['type']),
+            "Status": ", ".join(pokemon_info['stats']),
+            "Altura": pokemon_info['height'],
+            "Peso": pokemon_info['weight']
+        }
+        for key, value in info.items():
+            print(f"{key}: {value}")
 
-def pegarFormas(poke):
-    formas = []
-    for i in poke['forms']:
-        formas.append(i['name'])
-    return formas
-
-def pegarTipo(poke):
-    tipo = []
-    for i in poke['types']:
-        tipo.append(i['type']['name'])
-    return tipo
-
-def getStats(poke):
-    stats = []
-    for i in poke['stats']:
-        nome = i['stat']['name']
-        valor = i['base_stat'] 
-        stats.append(f"{nome}: {valor}")
-    return stats
-
-def printInfo(pokemon_name, abilities, forms, type, stats):
-    info = {
-        "Pokémon": pokemon_name,
-        "Habilidades": ", ".join(abilities),
-        "Formas": ", ".join(forms),
-        "Tipo": ", ".join(type),
-        "Status": ", ".join(stats)
-    }
-    for key, value in info.items():
-        print(f"{key}: {value}")
-
-def main():
-    api = 'https://pokeapi.co/api/v2/pokemon/pikachu'
+def getPokemonInfo(pokemon_name):
+    api = f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}'
     res = requests.get(api)
-    
+
     if res.status_code == 200:
         poke = res.json()
         
-        abilities = pegarHabilidades(poke)
-        forms = pegarFormas(poke)
-        type = pegarTipo(poke)
-        stats = getStats(poke)
+        abilities = [i['ability']['name'] for i in poke['abilities']]
+        forms = [i['name'] for i in poke['forms']]
+        type = [i['type']['name'] for i in poke['types']]
+        stats = [f"{i['stat']['name']}: {i['base_stat']}" for i in poke['stats']]
+        height = poke['height']
+        weight = poke['weight']
 
-        print("Nome:", "[Pikachu]", "\nHabilidades:", abilities,"\nForma:", forms, "\nTipo:", type, "\nStatus:", stats)
+        return {
+            'name': pokemon_name,
+            'abilities': abilities,
+            'forms': forms,
+            'type': type,
+            'stats': stats,
+            'height': height,
+            'weight': weight
+        }
+       
     else:
         print("Falha ao acessar a API. Código de status:", res.status_code)
 
+def main():
+    pokemon_info = getPokemonInfo("bulbasaur")
+    printInfo(pokemon_info)
+    
+    
 if __name__ == "__main__":
     main()
