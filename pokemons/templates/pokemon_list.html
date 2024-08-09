@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <title>Pokédex</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>POKEDEX</h1>
+    {% if pokemons %}
+        <ul>
+            <div class="pokemon-cards-container">
+                {% for pokemon in pokemons %}
+                    <div class="pokemon-card">
+                        <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
+                        <h2>{{ pokemon.name }}</h2>
+                        <p><strong>Tipo:</strong> {{ pokemon.type }}</p>
+                        <p><strong>Habilidades:</strong> {{ pokemon.abilities }}</p>
+                        <p><strong></strong> {{ pokemon.stats }}</p>
+                        <p><strong>Altura:</strong> {{ pokemon.height }} cm</p>
+                        <p><strong>Peso:</strong> {{ pokemon.weight }} kg</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </ul>
+        
+    {% else %}
+        <p>Nenhum Pokémon encontrado.</p>
+    {% endif %}
+</body>
+</html>
