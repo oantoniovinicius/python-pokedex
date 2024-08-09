@@ -11,9 +11,11 @@
         <div class="pokemon-cards-container">
             {% for pokemon in pokemons %}
                 <div class="pokemon-card" onclick="toggleCard(this)">
-                    <div class="pokemon-basic-info">
-                        <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
-                        <h2>{{ pokemon.name }}</h2>
+                    <div class="pokemon-info">
+                        <h2 class="pokemon-name">{{ pokemon.name }}</h2>
+                        <div class="pokemon-image-container">
+                            <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}" class="pokemon-image">
+                        </div>
                     </div>
                     <div class="pokemon-expanded-info">
                         <div class="pokemon-types">
