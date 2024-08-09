@@ -28,7 +28,7 @@ def getPokemonInfo(pokemon_name):
         return None
 
 def getAllPokemons():
-    api = 'https://pokeapi.co/api/v2/pokemon?limit=1000'  
+    api = 'https://pokeapi.co/api/v2/pokemon?limit=6'  
     res = requests.get(api)
     if res.status_code == 200:
         data = res.json()
@@ -39,7 +39,7 @@ def getAllPokemons():
 def pokemon_list(request):
     allPokemons = getAllPokemons()
     if allPokemons:
-        randomPokemons = random.sample(allPokemons, 5)  #get 5 random pokemons
+        randomPokemons = random.sample(allPokemons, 6)  #get 5 random pokemons
         pokemons = [getPokemonInfo(pokemon) for pokemon in randomPokemons]
     else:
         pokemons = []

@@ -8,22 +8,42 @@
 <body>
     <h1>POKEDEX</h1>
     {% if pokemons %}
-        <ul>
-            <div class="pokemon-cards-container">
-                {% for pokemon in pokemons %}
-                    <div class="pokemon-card">
+        <div class="pokemon-cards-container">
+            {% for pokemon in pokemons %}
+                <div class="pokemon-card" onclick="toggleCard(this)">
+                    <div class="pokemon-basic-info">
                         <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
                         <h2>{{ pokemon.name }}</h2>
-                        <p><strong>Tipo:</strong> {{ pokemon.type }}</p>
-                        <p><strong>Habilidades:</strong> {{ pokemon.abilities }}</p>
-                        <p><strong>Status:</strong> {{ pokemon.stats }}</p>
                     </div>
-                {% endfor %}
-            </div>
-        </ul>
-        
+                    <div class="pokemon-expanded-info">
+                        <div class="pokemon-types">
+                            {% for type in pokemon.type %}
+                                <span class="pokemon-type">{{ type }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="pokemon-abilities">
+                            <h3>Habilidades:</h3>
+                            <ul>
+                                {% for ability in pokemon.abilities %}
+                                    <li>{{ ability }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="pokemon-stats">
+                            <h3>Status:</h3>
+                            <ul>
+                                {% for stat in pokemon.stats %}
+                                    <li>{{ stat }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     {% else %}
         <p>Nenhum Pokémon encontrado.</p>
     {% endif %}
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
