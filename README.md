@@ -26,8 +26,7 @@ cd pokedex-python"
 
 Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
 
-"pip install -r requirements.txt"
-"pip install django"
+"pip install -r requirements.txt" ; "pip install django"
 
 Nota: No momento, o projeto está em migração para o Django e está sendo desenvolvido em ambiente virtual ativo.
 
