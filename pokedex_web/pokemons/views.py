@@ -49,3 +49,5 @@ def pokemon_list(request):
     }
 
     return render(request, 'pokemon_list.html', context)
+
+
