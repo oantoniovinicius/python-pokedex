@@ -6,18 +6,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>POKEDEX</h1>
-    <ul>
-        {% for pokemon in pokemons %}
-        <li>
-            <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}"><br>
-            <strong>{{ pokemon.name }}</strong><br>
-            <strong>Habilidades:</strong> {{ pokemon.abilities }}<br>
-            <strong>Tipo:</strong> {{ pokemon.type }}<br>
-            <!--strong>Status:</strong> {{ pokemon.stats }}<br-->
-        </li>
-        <br>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Pokedex</h1>
+        <div class="grid">
+            {% for pokemon in pokemons %}
+            <div class="card">
+                <div class="id">#{{ pokemon.id }}</div>
+                <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}"><br>
+                <strong>{{ pokemon.name }}</strong><br>
+                <strong>Habilidades:</strong> {{ pokemon.abilities|join:", " }}<br>
+                <strong>Tipo:</strong> {{ pokemon.type|join:", " }}<br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
