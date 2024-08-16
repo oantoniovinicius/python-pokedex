@@ -22,11 +22,23 @@ A aplicação exibe um conjunto de Pokemons organizados por ID.
 
 cd pokedex-python"
 
+### Execute o ambiente virtual
+Execute a seguinte sequência de comandos no CMD, Promp de Comando ou Powershell.
+"cd C:\Users\oneke\Documents\py\python-pokedex\pokedex"
+
+"./Scripts/Activate.ps1"
+
+"cd .."
+
+O ambiente virtual 'pokedex' será ativado.
+
 #### Instale as Dependências:
 
 Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
 
-"pip install requests" ; "pip install django"
+"pip install requests" 
+
+"pip install django"
 
 Nota: No momento, o projeto está em migração para o Django e está sendo desenvolvido em ambiente virtual ativo.
 
