@@ -11,8 +11,8 @@ O projeto faz requisições à PokeAPI para obter informações detalhadas sobre
 ### Interface Gráfica: 
 (Em breve)
 
-### Seleção Aleatória de Pokémons: 
-A aplicação exibe um conjunto de Pokémons aleatórios a cada execução.
+### Seleção de Pokémons: 
+A aplicação exibe um conjunto de Pokemons organizados por ID.
 
 ## Como Executar
 
@@ -26,7 +26,7 @@ cd pokedex-python"
 
 Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
 
-"pip install -r requirements.txt" ; "pip install django"
+"pip install requests" ; "pip install django"
 
 Nota: No momento, o projeto está em migração para o Django e está sendo desenvolvido em ambiente virtual ativo.
 
