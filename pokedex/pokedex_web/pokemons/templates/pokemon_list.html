@@ -1,19 +1,20 @@
-<!-- pokemons/templates/pokemons/pokemon_list.html -->
 <!DOCTYPE html>
 <html>
+    {% load static %}
 <head>
-    <title>Pokédex</title>
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Pokédex</h1>
+    <h1>POKEDEX</h1>
     <ul>
         {% for pokemon in pokemons %}
         <li>
+            <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}"><br>
             <strong>{{ pokemon.name }}</strong><br>
             <strong>Habilidades:</strong> {{ pokemon.abilities }}<br>
-            <strong>Formas:</strong> {{ pokemon.forms }}<br>
             <strong>Tipo:</strong> {{ pokemon.type }}<br>
-            <strong>Status:</strong> {{ pokemon.stats }}<br>
+            <!--strong>Status:</strong> {{ pokemon.stats }}<br-->
         </li>
         <br>
         {% endfor %}
