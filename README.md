@@ -16,13 +16,13 @@ A aplicação exibe um conjunto de Pokemons organizados por ID.
 
 ## Como Executar
 
-#### Clone o Repositório:
+### Clone o Repositório:
 
 "git clone https://github.com/seu-usuario/pokedex-python.git
 
 cd pokedex-python"
 
-### Execute o ambiente virtual
+### Ative o ambiente virtual
 Execute a seguinte sequência de comandos no CMD, Promp de Comando ou Powershell.
 
 1. "cd C:\Users\oneke\Documents\py\python-pokedex\pokedex"
@@ -33,7 +33,16 @@ Execute a seguinte sequência de comandos no CMD, Promp de Comando ou Powershell
 
 O ambiente virtual 'pokedex' será ativado.
 
-#### Instale as Dependências:
+### Executar o projeto
+Para executar o projeto, será necessário executar os seguintes comandos:
+
+1. "cd pokedex_web"
+
+2. "python manage.py runserver"
+
+Agora que o servidor está on, segue o URL do projeto para executar no navegador: http://127.0.0.1:8000/pokemons/
+
+### Instale as Dependências:
 
 Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
 
