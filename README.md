@@ -24,11 +24,12 @@ cd pokedex-python"
 
 ### Execute o ambiente virtual
 Execute a seguinte sequência de comandos no CMD, Promp de Comando ou Powershell.
-"cd C:\Users\oneke\Documents\py\python-pokedex\pokedex"
 
-"./Scripts/Activate.ps1"
+1. "cd C:\Users\oneke\Documents\py\python-pokedex\pokedex"
 
-"cd .."
+2. "./Scripts/Activate.ps1"
+
+3. "cd.."
 
 O ambiente virtual 'pokedex' será ativado.
 
