@@ -39,7 +39,7 @@ def getAllPokemons():
 
 def pokemon_list(request):
     pokemons = []
-    for pokemon_id in range (1,13):
+    for pokemon_id in range (1,29):
         pokemon_info = getPokemonInfo(pokemon_id)
         if pokemon_info:
             pokemons.append(pokemon_info)

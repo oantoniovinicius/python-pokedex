@@ -80,7 +80,7 @@ body {
     padding: 15px;
     margin: 10px;
     text-align: center;
-    box-shadow: -1px -1px 15px #ccc;
+    background-color: #eaeaea;
 }
 
 .card img {
@@ -90,7 +90,7 @@ body {
 }
 
 .card:hover {
-    background-color: #cfcfcf;;
+    background-color: #e5e5e5;;
 }
 
 .grid {
