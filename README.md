@@ -18,7 +18,7 @@ A aplicação exibe um conjunto de Pokemons organizados por ID.
 
 ### Clone o Repositório:
 
-"git clone https://github.com/oantoniovinicius/pokedex-python.git
+"git clone https://github.com/oantoniovinicius/python-pokedex.git"
 
 cd pokedex-python"
 
