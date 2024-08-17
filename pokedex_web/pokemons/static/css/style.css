@@ -1,8 +1,6 @@
 body {
-    background: #ffffff; /* Cor de fundo de fallback */
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background: rgb(255,172,172);
+background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 100%);
     color: #e2e2e2;
     margin: 0;
     font-family: monospace;
@@ -16,10 +14,16 @@ body {
     padding: 40px;
 }
 
+.logo-banner {
+    background-color: red; /* Cor de fundo da faixa */
+    width: 100%; /* Faz a faixa ocupar toda a largura da tela */
+    text-align: center; /* Centraliza a logo dentro da faixa */
+    padding: 10px 0; /* Ajusta a altura da faixa */
+}
+
 .container {
     text-align: center;
     display: grid;
-    padding: 40px;
     margin: 0 auto;
 }
   
@@ -97,6 +101,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 50px;
 }
   
 .grass {

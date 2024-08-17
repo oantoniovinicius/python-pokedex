@@ -7,7 +7,9 @@
 </head>
 <body>
     <div class="container">
-        <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+        <div class="logo-banner">
+            <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+        </div>
         <div class="grid">
             {% for pokemon in pokemons %}
             <div class="card">
