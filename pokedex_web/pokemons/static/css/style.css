@@ -1,6 +1,5 @@
 body {
-    background: rgb(255,172,172);
-background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 100%);
+    background: rgb(255, 255, 255);
     color: #e2e2e2;
     margin: 0;
     font-family: monospace;
@@ -15,7 +14,7 @@ background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 
 }
 
 .logo-banner {
-    background-color: red; /* Cor de fundo da faixa */
+    background-color: rgb(195, 5, 5); /* Cor de fundo da faixa */
     width: 100%; /* Faz a faixa ocupar toda a largura da tela */
     text-align: center; /* Centraliza a logo dentro da faixa */
     padding: 10px 0; /* Ajusta a altura da faixa */
@@ -48,8 +47,8 @@ background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 
 
 
 .pokemon-info{
-    background-color: #ffffff; /* Cor de fundo do quadrado */
-    color: #000; /* Cor do texto do ID */
+    background-color: #ffffff;
+    color: #000;
     border-radius: 5px;
     padding: 5px 10px;
     font-weight: bold;
@@ -58,8 +57,8 @@ background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 
 }
 
 .id{
-    background-color: #ffffff; /* Cor de fundo do quadrado */
-    color: #000; /* Cor do texto do ID */
+    background-color: #ffffff; 
+    color: #000; 
     border-radius: 5px;
     padding: 5px 10px;
     font-weight: bold;
@@ -72,10 +71,13 @@ background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 
     text-align: left;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 5px 0px;
+    padding: 5px 2px 10px;
     border-radius: 5px;
 }
 
+.name, .abilities, .types {
+    margin-top: auto;
+}
 
 .card {
     border: 1px solid #ccc;
@@ -85,16 +87,22 @@ background: radial-gradient(circle, rgba(255,172,172,1) 0%, rgba(254,254,254,1) 
     margin: 10px;
     text-align: center;
     background-color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px; 
 }
 
 .card img {
     width: 200px;
+    max-height: 150px;
+    object-fit: contain;
     height: auto;
     margin-bottom: 10px;
 }
 
 .card:hover {
-    background-color: #e5e5e5;;
+    background-color: #d0cece;;
 }
 
 .grid {
