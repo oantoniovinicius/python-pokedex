@@ -8,11 +8,11 @@ Bem-vindo ao meu projeto Pokédex! Este projeto é parte dos meus primeiros estu
 ### Consumo de API:
 O projeto faz requisições à PokeAPI para obter informações detalhadas sobre Pokémons, como habilidades, formas, tipos, status, altura, peso e imagens.
 
-### Interface Gráfica: 
-(Em breve)
+### Aplicação Web (Em desenvolvimento): 
+Uso de uma aplicação web com sistemas de cards de pokemons, consulta de pokemons e visualização de dados de pokemons.
 
-### Seleção de Pokémons: 
-A aplicação exibe um conjunto de Pokemons organizados por ID.
+### Seleção de Pokémons por usuário: 
+A aplicação exibe um conjunto de Pokemons organizados por ID para o usuário, que poderá favoritar seu pokemons e adicioná-lo em sua coleção
 
 ## Como Executar
 
