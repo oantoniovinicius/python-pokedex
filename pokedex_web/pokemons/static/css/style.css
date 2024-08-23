@@ -6,18 +6,18 @@ body {
 }
   
 .logo {
-    max-width: 100%; /* Ajusta o tamanho da imagem para não ultrapassar a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-bottom: 20px; /* Espaço abaixo da logo */
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 20px; 
     margin: 0 auto;
     padding: 40px;
 }
 
 .logo-banner {
-    background-color: rgb(195, 5, 5); /* Cor de fundo da faixa */
-    width: 100%; /* Faz a faixa ocupar toda a largura da tela */
-    text-align: center; /* Centraliza a logo dentro da faixa */
-    padding: 10px 0; /* Ajusta a altura da faixa */
+    background-color: rgb(212, 4, 4); 
+    width: 100%; 
+    text-align: center;
+    padding: 10px 0;
 }
 
 .container {

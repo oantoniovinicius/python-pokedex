@@ -38,11 +38,16 @@ def getAllPokemons():
         return []
 
 def pokemon_list(request):
+    query = request.GET.get('query')
     pokemons = []
-    for pokemon_id in range (1,29):
-        pokemon_info = getPokemonInfo(pokemon_id)
-        if pokemon_info:
-            pokemons.append(pokemon_info)
+
+    if query:
+        pokemons = searchPokemons(query.lower())
+    else:
+        for pokemon_id in range(1, 19):
+            pokemon_info = getPokemonInfo(pokemon_id)
+            if pokemon_info:
+                pokemons.append(pokemon_info)
     
     context = {
         'pokemons': pokemons
@@ -50,4 +55,14 @@ def pokemon_list(request):
 
     return render(request, 'pokemon_list.html', context)
 
+def searchPokemons(prefix):
+    allPokemons = getAllPokemons()
+    matched_pokemons = []
 
+    for pokemon_name in allPokemons:
+        if pokemon_name.startswith(prefix):
+            pokemon_info = getPokemonInfo(pokemon_name)
+            if pokemon_info:
+                matched_pokemons.append(pokemon_info)
+    
+    return matched_pokemons          
