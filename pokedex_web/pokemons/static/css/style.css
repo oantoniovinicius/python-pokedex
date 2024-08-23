@@ -79,6 +79,22 @@ body {
     margin-top: auto;
 }
 
+.home-button {
+    position:absolute;
+    left:20px;
+    top:20px;
+}
+
+.home-icon{
+    width: 35px;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.home-icon:hover{
+    transform: scale(1.1);
+}
+
 .search-term {
     display: flex;
     justify-content: center;

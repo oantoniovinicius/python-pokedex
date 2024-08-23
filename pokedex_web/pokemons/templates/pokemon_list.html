@@ -8,6 +8,11 @@
 <body>
     <div class="container">
         <div class="logo-banner">
+            <div class="home-button">
+                <a href="/pokemons/">
+                    <img src="{% static 'img/home-icon.png' %}" alt="Home" class="home-icon">
+                </a>
+            </div>
             <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
         </div>
         <form action="{% url 'pokemon_list' %}" method="get" class="search-term">
