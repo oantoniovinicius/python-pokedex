@@ -109,11 +109,11 @@ body {
 }
 
 .search-term input[type="text"] {
-    width: 300px;  /* Define a largura do campo de pesquisa */
-    padding: 10px;  /* Espaçamento interno */
-    border-radius: 5px;  /* Bordas arredondadas */
-    border: 1px solid #ccc;  /* Cor da borda */
-    font-size: 16px;  /* Tamanho da fonte */
+    width: 300px;  
+    padding: 10px;  
+    border-radius: 5px;  
+    border: 1px solid #ccc;
+    font-size: 16px;  
 }
 
 .search-term:focus{

@@ -37,7 +37,7 @@ def getAllPokemons():
     else:
         return []
 
-def pokemon_list(request):
+def pokemonList(request):
     query = request.GET.get('query')
     pokemons = []
 
