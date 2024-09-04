@@ -49,14 +49,14 @@ def pokemonList(request):
     pokemon_type = request.GET.get('type')
 
     if pokemon_type:
-        pokemon_names = getPokemonsByType(pokemon_type.lower())  # Busca pelos pokémons do tipo específico
+        pokemon_names = getPokemonsByType(pokemon_type.lower())  
     else:
-        pokemon_names = getAllPokemons()  # Busca todos os pokémons
+        pokemon_names = getAllPokemons() 
 
     if query:
         pokemons = searchPokemons(query.lower(), pokemon_names)
     else:
-        for pokemon_name in pokemon_names[:18]:  # Limita a exibição para 18 pokémons
+        for pokemon_name in pokemon_names[:18]:  
             pokemon_info = getPokemonInfo(pokemon_name)
             if pokemon_info:
                 pokemons.append(pokemon_info)
