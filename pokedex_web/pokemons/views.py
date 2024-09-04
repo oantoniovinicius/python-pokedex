@@ -1,29 +1,35 @@
 from django.shortcuts import render
 import requests
 
-def getPokemonInfo(pokemon_id):
-    api = f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}'
+pokemon_cache = {}
+
+def getPokemonInfo(pokemon_name):
+    if pokemon_name in pokemon_cache:
+        return pokemon_cache[pokemon_name]
+    
+    api = f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}'
     res = requests.get(api)
 
     if res.status_code == 200:
         poke = res.json()
         
         abilities = [i['ability']['name'] for i in poke['abilities']]
-        #forms = [i['name'] for i in poke['forms']]
         type = [i['type']['name'] for i in poke['types']]
         stats = [f"{i['stat']['name']}: {i['base_stat']}" for i in poke['stats']]
         image_url = poke['sprites']['front_default'] 
         pokemon_id = poke['id']
 
-        return {
+        pokemon_data = {
             'name': poke['name'],
             'abilities': abilities,
-            #'forms': forms,
             'type': type,
             'stats': stats,
             'image_url': image_url,  
             'id': pokemon_id
         }
+        
+        pokemon_cache[pokemon_name] = pokemon_data
+        return pokemon_data
     
     else:
         return None
@@ -40,12 +46,18 @@ def getAllPokemons():
 def pokemonList(request):
     query = request.GET.get('query')
     pokemons = []
+    pokemon_type = request.GET.get('type')
+
+    if pokemon_type:
+        pokemon_names = getPokemonsByType(pokemon_type.lower())  # Busca pelos pokémons do tipo específico
+    else:
+        pokemon_names = getAllPokemons()  # Busca todos os pokémons
 
     if query:
-        pokemons = searchPokemons(query.lower())
+        pokemons = searchPokemons(query.lower(), pokemon_names)
     else:
-        for pokemon_id in range(1, 19):
-            pokemon_info = getPokemonInfo(pokemon_id)
+        for pokemon_name in pokemon_names[:18]:  # Limita a exibição para 18 pokémons
+            pokemon_info = getPokemonInfo(pokemon_name)
             if pokemon_info:
                 pokemons.append(pokemon_info)
     
@@ -55,14 +67,24 @@ def pokemonList(request):
 
     return render(request, 'pokemon_list.html', context)
 
-def searchPokemons(prefix):
-    allPokemons = getAllPokemons()
+def searchPokemons(prefix, pokemon_names):
     matched_pokemons = []
 
-    for pokemon_name in allPokemons:
+    for pokemon_name in pokemon_names:
         if pokemon_name.startswith(prefix):
             pokemon_info = getPokemonInfo(pokemon_name)
             if pokemon_info:
                 matched_pokemons.append(pokemon_info)
     
-    return matched_pokemons          
+    return matched_pokemons     
+
+def getPokemonsByType(pokemon_type):
+    api = f'https://pokeapi.co/api/v2/type/{pokemon_type}'
+    res = requests.get(api)
+    
+    if res.status_code == 200:
+        type_data = res.json()
+        pokemon_names = [poke['pokemon']['name'] for poke in type_data['pokemon']]
+        return pokemon_names
+    else:
+        return []
