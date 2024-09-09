@@ -11,7 +11,7 @@ O projeto faz requisições à PokeAPI para obter informações detalhadas sobre
 ### Aplicação Web (Em desenvolvimento): 
 Uso de uma aplicação web com sistemas de cards de pokemons, consulta de pokemons e visualização de dados de pokemons.
 
-### Seleção de Pokémons por usuário: 
+### Seleção de Pokémons por usuário (em breve): 
 A aplicação exibe um conjunto de Pokemons organizados por ID para o usuário, que poderá favoritar seu pokemons e adicioná-lo em sua coleção
 
 ## Como Executar
@@ -24,12 +24,23 @@ cd pokedex-python"
 
 ### Ative o ambiente virtual
 Execute a seguinte sequência de comandos no CMD, Promp de Comando ou Powershell.
+OBS.: É necessário ter o Python 3 ou superior instalado
 
 1. "cd C:\Users\oneke\Documents\py\python-pokedex\pokedex"
 
 2. "./Scripts/Activate.ps1"
 
 3. "cd.."
+
+### Instale as Dependências:
+
+Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
+
+"pip install requests" 
+
+"pip install django"
+
+Nota: No momento, o projeto está em migração para o Django e está sendo desenvolvido em ambiente virtual ativo.
 
 O ambiente virtual 'pokedex' será ativado.
 
@@ -42,22 +53,6 @@ Para executar o projeto, será necessário executar os seguintes comandos:
 
 Agora que o servidor está on, segue o URL do projeto para executar no navegador: http://127.0.0.1:8000/pokemons/
 
-### Instale as Dependências:
-
-Certifique-se de ter o Python instalado na versão 3.1 ou superior. Instale as dependências necessárias:
-
-"pip install requests" 
-
-"pip install django"
-
-Nota: No momento, o projeto está em migração para o Django e está sendo desenvolvido em ambiente virtual ativo.
-
-#### Execute a Aplicação:
-
-Para executar a versão atual da aplicação, rode o seguinte comando:
-
-"python main.py"
-
 ## Futuras Melhorias
 
 Este projeto está em constante evolução e algumas das próximas etapas incluem:
@@ -69,7 +64,7 @@ Planejo criar uma versão web deste projeto utilizando o framework Django, onde 
 Implementar uma base de dados para armazenar e consultar informações dos Pokémons localmente.
 
 ### Novas Funcionalidades: 
-Adicionar filtros de busca, histórico de Pokémons visualizados, e outras funcionalidades interessantes.
+Adicionar filtros de busca, salvar pokemons favoritos, criação de usuário, entre outras.
 
 ## Contato
 
