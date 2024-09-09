@@ -114,14 +114,6 @@ body {
     color: #bf9d9d;
 }
 
-.search-container input[type="text"] {
-    width: 100%;
-    padding: 10px 50px 10px 15px; /* Espaço à direita maior para a lupa */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
 .search-term input[type="text"] {
     width: 300px;  
     padding: 10px;  
