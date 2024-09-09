@@ -16,8 +16,11 @@
             <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
         </div>
         <form action="{% url 'pokemon_list' %}" method="get" class="search-term">
-            <input type="text" name="query" placeholder="Enter pokemon name" autofocus>
-            <select name="type">
+            <input type="text" name="query" placeholder="Enter pokemon name" autofocus class="filter">
+            <button type="submit" class="search-button">
+                <img src="{% static 'img/lupa.png' %}" alt="Search" class="search-icon">
+            </button>
+            <select name="type" onchange="this.form.submit()">
                 <option value="">All Types</option>
                 <option value="grass">Grass</option>
                 <option value="fire">Fire</option>
@@ -38,8 +41,6 @@
                 <option value="steel">Steel</option>
                 <option value="flying">Flying</option>
             </select>
-
-            <button type="submit">Search</button>
         </form>
         <div class="grid">
             {% for pokemon in pokemons %}

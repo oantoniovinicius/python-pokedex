@@ -101,6 +101,7 @@ body {
 
 .search-term {
     display: flex;
+    align-items: center;
     justify-content: center;
     margin: 20px 0;
     height: 45px;
@@ -116,9 +117,27 @@ body {
     font-size: 16px;  
 }
 
+.search-button {
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .search-term:focus{
     color: #1f1f1f;
 }
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
 
 .card {
     border: 1px solid #ccc;
