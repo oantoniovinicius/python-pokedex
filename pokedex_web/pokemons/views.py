@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import requests
+from django.core.paginator import Paginator
 
 pokemon_cache = {}
 
@@ -47,6 +48,7 @@ def pokemonList(request):
     query = request.GET.get('query')
     pokemons = []
     pokemon_type = request.GET.get('type')
+    page_number = int(request.GET.get('page', 1))
 
     if pokemon_type:
         pokemon_names = getPokemonsByType(pokemon_type.lower())  
@@ -56,11 +58,16 @@ def pokemonList(request):
     if query:
         pokemons = searchPokemons(query.lower(), pokemon_names)
     else:
-        for pokemon_name in pokemon_names[:18]:  
+        paginator = Paginator(pokemon_names, 24) 
+        page_obj = paginator.get_page(page_number)
+        for pokemon_name in page_obj:  
             pokemon_info = getPokemonInfo(pokemon_name)
             if pokemon_info:
                 pokemons.append(pokemon_info)
-    
+                
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'pokemon_list_partial.html', {'pokemons': pokemons})
+                
     context = {
         'pokemons': pokemons
     }

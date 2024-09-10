@@ -1,0 +1,16 @@
+{% for pokemon in pokemons %}
+<div class="card">
+    <div class="id">#{{ pokemon.id }}</div>
+    <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}"><br>
+    <div class="pokemon-info">
+        <div class="name">
+            {{ pokemon.name }}
+        </div>
+        <div class="types">
+            {% for type in pokemon.type %}
+                <div class="tipo {{ type }}">{{ type }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}

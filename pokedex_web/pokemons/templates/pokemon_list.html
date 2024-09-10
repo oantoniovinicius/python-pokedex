@@ -66,5 +66,38 @@
             {% endfor %}
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let page = 1;
+            let loading = false;
+
+            const loadMorePokemons = () => {
+                if (loading) return;
+                loading = true;
+                page++;
+
+                fetch(`/pokemons/?page=${page}&query={{ request.GET.query }}&type={{ request.GET.type }}`, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.querySelector('.grid');
+                    container.insertAdjacentHTML('beforeend', html);
+                    loading = false;
+                })
+                .catch(() => {
+                    loading = false;
+                });
+            };
+
+            window.addEventListener('scroll', () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    loadMorePokemons();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
