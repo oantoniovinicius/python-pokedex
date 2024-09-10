@@ -58,7 +58,7 @@ def pokemonList(request):
     if query:
         pokemons = searchPokemons(query.lower(), pokemon_names)
     else:
-        paginator = Paginator(pokemon_names, 24) 
+        paginator = Paginator(pokemon_names, 12) 
         page_obj = paginator.get_page(page_number)
         for pokemon_name in page_obj:  
             pokemon_info = getPokemonInfo(pokemon_name)
