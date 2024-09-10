@@ -189,6 +189,13 @@ body {
     justify-content: space-around;
     padding: 10px 50px;
 }
+
+.loading-message {
+    font-size: 18px;
+    color: #3498db;
+    text-align: center;
+    padding: 20px;
+}
   
 .grass {
     background-color: #78C850;
