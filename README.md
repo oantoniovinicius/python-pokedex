@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Bem-vindo ao meu projeto Pokédex! Este projeto é parte dos meus primeiros estudos em Python e tem como objetivo explorar o consumo de APIs para coletar e exibir informações sobre Pokémons. Estou utilizando a PokeAPI como fonte de dados e, em breve, planejo evoluir este projeto para uma aplicação web usando o framework Django.
+Bem-vindo ao meu projeto Pokedex! Este projeto é parte dos meus primeiros estudos em Python e tem como objetivo explorar o consumo de APIs para coletar e exibir informações sobre Pokémons. Estou utilizando a PokeAPI como fonte de dados e, em breve, planejo evoluir este projeto para uma aplicação web usando o framework Django.
 
 ## Funcionalidade
 ### Consumo de API:
@@ -60,10 +60,8 @@ Este projeto está em constante evolução e algumas das próximas etapas inclue
 ### Migração para Django: (Em andamento)
 Planejo criar uma versão web deste projeto utilizando o framework Django, onde será possível acessar a Pokédex através de um navegador. 
 
-### Persistência de Dados: 
-Implementar uma base de dados para armazenar e consultar informações dos Pokémons localmente.
-
 ### Novas Funcionalidades: 
+
 Adicionar filtros de busca, salvar pokemons favoritos, criação de usuário, entre outras.
 
 ## Contato
