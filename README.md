@@ -60,6 +60,9 @@ Este projeto está em constante evolução e algumas das próximas etapas inclue
 ### Migração para Django: (Em andamento)
 Planejo criar uma versão web deste projeto utilizando o framework Django, onde será possível acessar a Pokédex através de um navegador. 
 
+### Aplicação em execução (Atualmente):
+![Layout](https://github.com/oantoniovinicius/python-pokedex/blob/main/pokedex_web/pokemons/static/img/execution.gif)
+
 ### Novas Funcionalidades: 
 
 Adicionar filtros de busca, salvar pokemons favoritos, criação de usuário, entre outras.
