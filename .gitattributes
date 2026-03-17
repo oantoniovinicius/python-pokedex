@@ -1,1 +1,2 @@
 *.py linguist-detectable=false
+migrations/** linguist-generated=true
